@@ -45,7 +45,7 @@ mkdir -p data
 # Запускаем контейнер
 sudo VERSION=${VERSION} RAM_SIZE=${RAM_SIZE} CPU_CORES=${CPU_CORES} \
   USERNAME=${USERNAME} PASSWORD=${PASSWORD} LANGUAGE=${LANGUAGE} \
-  DISK_SIZE=${DISK_SIZE} docker-compose up -d
+  DISK_SIZE=${DISK_SIZE} docker compose up -d
 
 # Вывод сообщения о завершении установки
 echo "Windows контейнер успешно запущен! Подключиться можно по RDP: IP-сервера:8888"
