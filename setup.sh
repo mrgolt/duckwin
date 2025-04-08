@@ -20,13 +20,13 @@ services:
     image: dockurr/windows
     container_name: windows
     environment:
-      VERSION: "${VERSION}"
-      RAM_SIZE: "${RAM_SIZE}"
-      CPU_CORES: "${CPU_CORES}"
-      USERNAME: "${USERNAME}"
-      PASSWORD: "${PASSWORD}"
-      LANGUAGE: "${LANGUAGE}"
-      DISK_SIZE: "${DISK_SIZE}"
+      VERSION: "2019"
+      RAM_SIZE: "112G"
+      CPU_CORES: "32"
+      USERNAME: "bill"
+      PASSWORD: "DoRiTYPslImpLIAntATiCTOR"
+      LANGUAGE: "English"
+      DISK_SIZE: "512G"
     volumes:
       - ./data:/storage
     devices:
@@ -43,9 +43,7 @@ EOF
 mkdir -p data
 
 # Запускаем контейнер
-sudo VERSION=${VERSION} RAM_SIZE=${RAM_SIZE} CPU_CORES=${CPU_CORES} \
-  USERNAME=${USERNAME} PASSWORD=${PASSWORD} LANGUAGE=${LANGUAGE} \
-  DISK_SIZE=${DISK_SIZE} docker compose up -d
+sudo docker compose up --build -d
 
 # Вывод сообщения о завершении установки
 echo "Windows контейнер успешно запущен! Подключиться можно по RDP: IP-сервера:8888"
